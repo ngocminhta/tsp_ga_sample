@@ -52,7 +52,7 @@ def create_city() -> City:
     return city
 
 def distance(a, b) -> float:
-    dis = math.hypot((a[0] - b[0]) + (a[1] - b[1]))
+    dis = math.hypot((a[0] - b[0]), (a[1] - b[1]))
     return dis
 
 def get_fittest_city(cities: List[City]) -> City:
