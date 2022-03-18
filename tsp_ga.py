@@ -30,7 +30,7 @@ def read_cities():
 CITY_COORDINATES = read_cities()
 TOTAL_NST = len(CITY_COORDINATES) - 1
 POPULATION_SIZE = 100
-MAX_GENERATION = 2000
+MAX_GENERATION = 1000
 MUTATION_RATE = 0.01
 
 
@@ -178,9 +178,7 @@ if __name__ == "__main__":
 
         # Renew population
         sorted_list = sorted(population, key = lambda x : x.cost, reverse= True)
-        while len(sorted_list) != POPULATION_SIZE:
-            sorted_list.remove(sorted_list[0])
-        population = sorted_list
+        population = sorted_list[-POPULATION_SIZE:]
 
         all_fittest.append(get_fittest_city(population))
         all_pop_size.append(len(population))
